@@ -111,16 +111,9 @@ export default [
       } ],
 
       "array-callback-return":            "error",
-      "@stylistic/array-bracket-spacing": [ "error", "always" ],
       "arrow-body-style":                 "off",
 
-      "@stylistic/arrow-spacing": [ "error", {
-        before: true,
-        after:  true,
-      } ],
-
       "block-scoped-var":         "off",
-      "@stylistic/block-spacing": [ "error", "always" ],
       camelcase:                  "off",
       "capitalized-comments":     "off",
       "class-methods-use-this":   "off",
@@ -157,13 +150,6 @@ export default [
       } ],
 
       "init-declarations": "off",
-
-      "@stylistic/key-spacing": [ "error", {
-        beforeColon: false,
-        afterColon:  true,
-        mode:        "minimum",
-        align:       "value",
-      } ],
 
       "line-comment-position":        "off",
       "lines-between-class-members":  "off",
@@ -299,7 +285,6 @@ export default [
       "no-shadow":                     "off",
       "no-shadow-restricted-names":    "error",
       "no-sparse-arrays":              "error",
-      "@stylistic/no-tabs":            "error",
       "no-template-curly-in-string":   "error",
       "no-ternary":                    "off",
       "no-this-before-super":          "error",
@@ -369,13 +354,12 @@ export default [
       "prefer-rest-params":              "off",
       "prefer-spread":                   "off",
       "prefer-template":                 "off",
-      "@stylistic/quotes":               [ "error", "double" ],
-      radix:                             "error",
+
+      "radix":                             "error",
       "require-atomic-updates":          "off",
       "require-await":                   "off",
       "require-unicode-regexp":          "off",
       "require-yield":                   "error",
-      "@stylistic/semi":                 [ "error", "always" ],
       "sort-imports":                    "off",
       "sort-keys":                       "off",
       "sort-vars":                       "off",
@@ -389,17 +373,35 @@ export default [
         },
       } ],
 
-      "@stylistic/space-in-parens": [ "error", "always" ],
-      strict:                       [ "error", "never" ],
+      "strict":                       [ "error", "never" ],
       "symbol-description":         "error",
 
       "use-isnan":                  "error",
       "valid-typeof":               "error",
       "vars-on-top":                "off",
 
-      yoda: [ "error", "never", {
+      "yoda": [ "error", "never", {
         onlyEquality: true,
       } ],
+
+      "@stylistic/array-bracket-spacing": [ "error", "always" ],
+      "@stylistic/arrow-spacing":         [ "error", {
+        before: true,
+        after:  true,
+      } ],
+      "@stylistic/block-spacing": [ "error", "always" ],
+      "@stylistic/key-spacing":   [ "error", {
+        beforeColon: false,
+        afterColon:  true,
+        mode:        "minimum",
+        align:       "value",
+      } ],
+      "@stylistic/object-curly-spacing":   [ "error", "always" ],
+      "@stylistic/no-tabs":                "error",
+      "@stylistic/quotes":                 [ "error", "double" ],
+      "@stylistic/semi":                   [ "error", "always" ],
+      "@stylistic/space-in-parens":        [ "error", "always" ],
+      "@stylistic/template-curly-spacing": [ "error", "always" ],
     },
   },
   {
