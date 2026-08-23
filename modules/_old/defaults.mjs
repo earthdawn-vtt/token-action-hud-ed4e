@@ -1,0 +1,158 @@
+
+/**
+ * Default categories and groups
+ */
+export let Defaults = null;
+
+Hooks.once( "tokenActionHudCoreApiReady", async ( coreModule ) => {
+  const groups = {
+    talents: { id: "talents", name: "ED.Actor.Header.talents", type: "system" },
+  };
+  Object.values( groups ).forEach( group => {
+    group.name = _loc( group.name );
+    group.listName = `Group: ${_loc( group.name )}`;
+  } );
+  const groupsArray = Object.values( groups );
+  console.debug( "Creating default cats and groups. groupsArray:", groupsArray );
+
+  Defaults = {
+    layout: [
+      {
+        nestId: "talents",
+        id:     "talents",
+        name:   _loc( "ED.Actor.Header.talents" ),
+        groups: [
+          { ...groups.talents, nestId: "talents_talents"},
+        ]
+      },
+    ],
+    groups: groupsArray,
+  };
+
+  /* Defaults = {
+    layout: [
+      {
+        nestId: "general",
+        id:     "general",
+        name:   coreModule.api.Utils.i18n( "tokenActionHud.ed4e.groupTitles.general" ),
+        groups: [
+          { ...groups.attributes, nestId: "general_attributes"},
+          { ...groups.other, nestId: "general_other"},
+          { ...groups.system, nestId: "general_system"}
+        ]
+      },
+      {
+        nestId: "powers",
+        id:     "powers",
+        name:   coreModule.api.Utils.i18n( "earthdawn.p.powers" ),
+        groups: [
+          { ...groups.powerAttacks, nestId: "powers_powerAttacks"},
+          { ...groups.powerManeuvers, nestId: "powers_powerManeuvers"},
+          { ...groups.powerPowers, nestId: "powers_powerPowers"},
+        ]
+      },
+      {
+        nestId: "favorites",
+        id:     "favorites",
+        name:   coreModule.api.Utils.i18n( "tokenActionHud.ed4e.groupTitles.favorites" ),
+        groups: [
+          { ...groups.favorites, nestId: "favorites_favorites"}
+        ]
+      },
+      {
+        nestId: "talents",
+        id:     "talents",
+        name:   coreModule.api.Utils.i18n( "earthdawn.t.talents" ),
+        type:   "system",
+        groups: [
+          {...groups.standard, nestId: "talents_standard"},
+          {...groups.simple, nestId: "talents_simple"},
+          {...groups.free, nestId: "talents_free"},
+          {...groups.sustained, nestId: "talents_sustained"},
+          {...groups.na, nestId: "talents_na"},
+        ]
+      },
+      {
+        nestId: "skills",
+        id:     "skills",
+        name:   coreModule.api.Utils.i18n( "earthdawn.s.skills" ),
+        groups: [
+          {...groups.standard, nestId: "skills_standard"},
+          {...groups.simple, nestId: "skills_simple"},
+          {...groups.free, nestId: "skills_free"},
+          {...groups.sustained, nestId: "skills_sustained"},
+          {...groups.na, nestId: "skills_na"},
+        ]
+      },
+      {
+        nestId: "devotions",
+        id:     "devotions",
+        name:   coreModule.api.Utils.i18n( "earthdawn.d.devotions" ),
+        groups: [
+          {...groups.standard, nestId: "devotions_standard"},
+          {...groups.simple, nestId: "devotions_simple"},
+          {...groups.free, nestId: "devotions_free"},
+          {...groups.sustained, nestId: "devotions_sustained"},
+          {...groups.na, nestId: "devotions_na"},
+        ]
+      },
+      {
+        nestId: "spells",
+        id:     "spells",
+        name:   coreModule.api.Utils.i18n( "earthdawn.s.spells" ),
+        groups: Array.from(
+          Object.values( circleGroupData ),
+          group => {
+            group["nestId"] = `spells_${group.id}`;
+            return group;
+          }
+        )
+      },
+      {
+        nestId: "inventory",
+        id:     "inventory",
+        name:   coreModule.api.Utils.i18n( "earthdawn.i.inventory" ),
+        groups: [
+          { ...groups.weapons, nestId: "inventory_weapons"},
+          { ...groups.armors, nestId: "inventory_armors"},
+          { ...groups.shields, nestId: "inventory_shields"},
+          { ...groups.equipment, nestId: "inventory_equipment"}
+        ]
+      },
+      {
+        nestId: "matrices",
+        id:     "matrices",
+        name:   coreModule.api.Utils.i18n( "tokenActionHud.ed4e.groupTitles.matrix" )
+      },
+      {
+        nestId: "combat",
+        id:     "combat",
+        name:   coreModule.api.Utils.i18n( "earthdawn.c.combat" ),
+        groups: [
+          { ...groups.weaponAttack, nestId: "combat_weaponAttack"},
+          { ...groups.optionsModifier, nestId: "combat_optionsModifier"},
+          { ...groups.combatActions, nestId: "combat_actions"},
+        ]
+      },
+      {
+        nestId: "effects",
+        id:     "effects",
+        name:   coreModule.api.Utils.i18n( "earthdawn.e.effects" ),
+        groups: [
+          { ...groups.addEffect, nestId: "effects_addEffect"},
+          { ...groups.effects, nestId: "effects_effects" }
+        ]
+      },
+      {
+        nestId: "utility",
+        id:     "utility",
+        name:   coreModule.api.Utils.i18n( "tokenActionHud.utility" ),
+        groups: [
+          { ...groups.combatUtilities, nestId: "utility_combatUtilities" },
+          { ...groups.token, nestId: "utility_token" },
+        ]
+      }
+    ],
+    groups: groupsArray
+  }; */
+} );
