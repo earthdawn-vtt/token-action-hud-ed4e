@@ -179,7 +179,7 @@ export const GROUP = {
   armors:          { id: "armors", name: "TokenActionHud.Groups.Names.armors", type: "system"},
   shields:         { id: "shields", name: "TokenActionHud.Groups.Names.shields", type: "system"},
   equipment:       { id: "equipment", name: "TokenActionHud.Groups.Names.equipment", type: "system"},
-  /* equipped:        { id: "equipped", name: "earthdawn.e.equipped", type: "system" },
+  equipped:        { id: "equipped", name: "earthdawn.e.equipped", type: "system" },
   unequipped:      { id: "unequipped", name: "tokenActionHud.ed4e.unequipped", type: "system" },
   weaponAttack:    { id: "weaponAttack", name: "tokenActionHud.ed4e.attack", type: "system"},
   threadItems:     { id: "threadItems", name: "earthdawn.t.threadItems", type: "system"},
@@ -203,7 +203,7 @@ export const GROUP = {
   effects:         { id: "effects", name: "earthdawn.e.effects", type: "system" },
   addEffect:       { id: "addEffect", name: "tokenActionHud.ed4e.groupTitles.addEffect", type: "system" },
   ...circleGroupData,
-  ...disciplineGroupData, */
+  ...disciplineGroupData,
 };
 
 /**
