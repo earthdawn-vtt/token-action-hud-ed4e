@@ -5,14 +5,15 @@
   "authors": [
     {
       "name": "Qrizzl",
-      "url": "https://github.com/ChristopherSD"
+      "url": "https://github.com/qrizzl",
+      "ko-fi": "https://ko-fi.com/qrizzl"
     }
   ],
   "url": "This is auto replaced",
   "version": "This is auto replaced",
   "compatibility": {
-    "minimum": "12",
-    "verified": "13.346"
+    "minimum": "14",
+    "verified": "14.362"
   },
   "esmodules": [
     "modules/init.mjs"
@@ -37,12 +38,12 @@
   "relationships": {
     "systems": [
       {
-        "id": "earthdawn4e",
+        "id": "ed4e",
         "type": "system",
         "compatibility": [
           {
-            "minimum": "0.8.1",
-            "verified": "0.8.2.2"
+            "minimum": "0.2",
+            "verified": "0.2"
           }
         ]
       }
@@ -52,7 +53,7 @@
         "id": "token-action-hud-core",
         "type": "module",
         "compatibility": {
-            "minimum": "2.0"
+            "minimum": "2.1"
         }
       }
     ],
@@ -62,5 +63,5 @@
   },
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",
-  "readme": "https://github.com/ChristopherSD/fvtt-token-action-hud-ed4e#readme"
+  "readme": "https://github.com/earthdawn-vtt/fvtt-token-action-hud-ed4e#readme"
 }
