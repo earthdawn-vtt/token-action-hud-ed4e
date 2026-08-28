@@ -92,21 +92,6 @@ export class ActionAbilityBuilder extends BaseActionBuilder {
       case itemTypes.devotion:
       case itemTypes.talent:
       case itemTypes.skill:
-        info1 = {
-          text:  `${ item.system.rankFinal }`,
-          title: _loc( "ED.Actor.Header.rank" ),
-        };
-        info2 = {
-          text:  CONFIG.ED4E.ACTORS.attributes[item.system.attribute]?.abbreviation.toUpperCase() ?? "",
-          title: _loc( "ED.Actor.Header.attribute" ),
-        };
-        if ( item.system.strain > 0 ) {
-          info3 = {
-            text:  `${ item.system.strain }`,
-            title: _loc( "ED.Actor.Header.strain" ),
-          };
-        }
-        break;
       case itemTypes.power:
         info1 = {
           text:  `${ item.system.rankFinal }`,
@@ -119,7 +104,9 @@ export class ActionAbilityBuilder extends BaseActionBuilder {
         if ( item.system.strain > 0 ) {
           info3 = {
             text:  `${ item.system.strain }`,
+            icon:  `<i class="fa-thin fa-droplet" title="${ _loc( "ED.Actor.Header.strain" ) }"></i>`,
             title: _loc( "ED.Actor.Header.strain" ),
+            class: "tah-spotlight",
           };
         }
         break;
