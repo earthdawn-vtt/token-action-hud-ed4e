@@ -390,6 +390,13 @@ export default [
         after:  true,
       } ],
       "@stylistic/block-spacing": [ "error", "always" ],
+      "@stylistic/comma-spacing": [
+        "error",
+        {
+          before: false,
+          after:  true,
+        }
+      ],
       "@stylistic/key-spacing":   [ "error", {
         beforeColon: false,
         afterColon:  true,
