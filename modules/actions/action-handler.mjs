@@ -70,6 +70,7 @@ import { GeneralActionsBuilder } from "./builders/general-actions-builder.mjs";
 import { InventoryActionsBuilder } from "./builders/inventory-actions-builder.mjs";
 import { CombatActionsBuilder } from "./builders/combat-actions-builder.mjs";
 import { EffectActionsBuilder } from "./builders/effect-actions-builder.mjs";
+import { MultiTokenActionsBuilder } from "./builders/multi-token-actions-builder.mjs";
 
 export function createActionHandler( coreApi ) {
 
@@ -89,7 +90,7 @@ export function createActionHandler( coreApi ) {
         new EffectActionsBuilder( this, coreApi ),
       ];
 
-      this.multiActorBuilder = [];
+      this.multiActorBuilder = new MultiTokenActionsBuilder( this, coreApi );
     }
 
     /**
@@ -98,6 +99,7 @@ export function createActionHandler( coreApi ) {
      */
     async buildSystemActions( groupIds ){
       if ( !this.actor ) {
+        await this.multiActorBuilder.buildActions( this.token );
         return;
       }
 
