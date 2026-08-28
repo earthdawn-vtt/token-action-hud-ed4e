@@ -20,7 +20,7 @@ export class BaseActionBuilder {
    * @returns {boolean} True if the sheet was rendered. False otherwise.
    */
   renderDocumentSheet( document=null ) {
-    if ( this.actionHandler.hudManager.isRenderItem() && document?.sheet ) {
+    if ( this.actionHandler.hudManager.rollHandler.isRenderItem() && document?.sheet ) {
       document.sheet.render( { force: true } );
       return true;
     }
