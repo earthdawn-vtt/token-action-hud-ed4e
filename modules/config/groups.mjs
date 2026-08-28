@@ -5,28 +5,29 @@
 /**
  * Module-specific categories that exist on the HUD as top level.
  */
-export const CATEGORY_IDS = [
-  "general",
-  "powers",
-  "talents",
-  "skills",
-  "devotions",
-  "spells",
-  "inventory",
-  "combat",
-  "effects",
-  "utility",
-];
+export const CATEGORY_IDS = {
+  general:   "general",
+  power:     "powers",
+  talent:    "talents",
+  skill:     "skills",
+  devotion:  "devotions",
+  spell:     "spells",
+  inventory: "inventory",
+  combat:    "combat",
+  effect:    "effects",
+  utility:   "utility",
+};
 
 /**
  * Module-only group IDs that do not exist directly in CONFIG.ED4E.
+ * @enum {string}
  */
-export const MODULE_GROUP_IDS = [
-  "attributes",
-  "other",
-  "favorites",
-  "utility",
-];
+export const MODULE_GROUP_IDS = {
+  attributes: "attributes",
+  other:      "other",
+  favorites:  "favorites",
+  utility:    "utility",
+};
 
 /**
  * Group data for module-specific groups.
@@ -34,7 +35,7 @@ export const MODULE_GROUP_IDS = [
  */
 export function getModuleGroups() {
   const moduleGroups = {};
-  for ( const group of MODULE_GROUP_IDS ) {
+  for ( const group of Object.values( MODULE_GROUP_IDS ) ) {
     moduleGroups[ group ] = {
       id:   group,
       name: _loc( `TokenActionHud.Groups.Names.${ group }` ),
@@ -67,7 +68,6 @@ export function getEd4eGroups() {
   const ed4eConfig = CONFIG.ED4E;
   return {
     actionSpeed: ed4eConfigToGroups( ed4eConfig.ACTIONS.action ),
-    // TODO: make (non-default) groups for rolltypes
   };
 }
 
@@ -76,7 +76,7 @@ export function getEd4eGroups() {
  * @returns {Record<string, HUDGroup>}
  */
 export function getCategoryBaseGroups() {
-  const categoryGroups = CATEGORY_IDS.map( id => {
+  const categoryGroups = Object.values( CATEGORY_IDS ).map( id => {
     return {
       id,
       name: _loc( `TokenActionHud.Categories.Names.${ id }` ),
