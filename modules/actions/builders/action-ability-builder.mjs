@@ -67,11 +67,11 @@ export class ActionAbilityBuilder extends BaseActionBuilder {
           if ( this.renderDocumentSheet( ability ) ) return;
           await ability.system.roll?.();
         },
-        onHover:      async () => {
+        /* onHover:      async () => {
           const knacks = this._getKnackAbilities( ability );
           if ( !knacks ) return;
           ui.notifications.info( `Knacks coming soon. Available knacks:\n${ knacks.map( knack => knack.name ).join( "\n" ) }` );
-        },
+        }, */
       };
 
       actionsByGroup[ability.system.action] ??= [];
