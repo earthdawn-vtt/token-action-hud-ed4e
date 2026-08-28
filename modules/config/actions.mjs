@@ -3,6 +3,7 @@
  */
 export const ACTION_IDS = {
   addEffect:     "addEffect",
+  endTurn:       "endTurn",
   jumpUp:        "jumpUp",
   knockdownTest: "knockdownTest",
   meleeAttack:   "meleeAttack",

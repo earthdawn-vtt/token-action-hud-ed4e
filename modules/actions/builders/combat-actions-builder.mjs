@@ -53,7 +53,7 @@ export class CombatActionsBuilder extends BaseActionBuilder {
    * @returns {ActionData[]}
    */
   _getCombatActions() {
-    return [
+    const combatActions = [
       {
         id:           ACTION_IDS.takeDamage,
         name:         _loc( "TokenActionHud.Actions.Names.takeDamage" ),
@@ -84,6 +84,15 @@ export class CombatActionsBuilder extends BaseActionBuilder {
         }
       },
     ];
+    if ( game.combat?.current?.tokenId === this.token?.id ) combatActions.push( {
+      id:      ACTION_IDS.endTurn,
+      name:    _loc( "TokenActionHud.Actions.Names.endTurn" ),
+      onClick: async () => {
+        await game.combat.nextTurn();
+      }
+    } );
+
+    return combatActions;
   }
 
 }

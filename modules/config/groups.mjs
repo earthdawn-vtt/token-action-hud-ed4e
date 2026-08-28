@@ -104,6 +104,12 @@ export function getEd4eGroups() {
   };
 }
 
+export function getTAHCoreGroups() {
+  return {
+    token: { id: "token", type: "system", },
+  };
+}
+
 /**
  * Basic group data for top-level categories.
  * @returns {Record<string, HUDGroup>}
@@ -122,6 +128,7 @@ export function getCategoryBaseGroups() {
 export function getCategoryHierarchy() {
   const systemGroups = getSystemGroups();
   const ed4eGroups = getEd4eGroups();
+  const tahCoreGroups = getTAHCoreGroups();
   return {
     general:   [ systemGroups.attributes, systemGroups.other, ],
     powers:    [ ...ed4eGroups.actionSpeed, ],
@@ -132,7 +139,7 @@ export function getCategoryHierarchy() {
     inventory: [ ...ed4eGroups.inventory, ],
     combat:    [ systemGroups.attacks, systemGroups.combatActions, ],
     effects:   [ systemGroups.effects, systemGroups.statusEffects, ],
-    utility:   [],
+    utility:   [ tahCoreGroups.token, ],
   };
 }
 
