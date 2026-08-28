@@ -61,13 +61,42 @@ function ed4eConfigToGroups( ed4eConfig ) {
 }
 
 /**
+ * Convert ED4E system types to groups.
+ * @param { string } documentName The name of the document type, e.g. "Item".
+ * @param { string[] } systemTypes The system types to convert.
+ * @returns { HUDGroup[] }
+ */
+function ed4eSystemTypesToGroups( documentName, systemTypes ) {
+  const documentSystemTypes = ED4E_CONSTANTS.SYSTEM_TYPES[ documentName ];
+  if ( !documentSystemTypes ) return [];
+
+  return systemTypes.map( systemType => {
+    return {
+      id:   `${ documentName }-${ systemType }`,
+      name: _loc( `TYPES.${ documentName }.${ systemType }` ),
+      type: "system",
+    };
+  } );
+}
+
+/**
  * Group data for groups based on ED4E config data.
  * @returns { Record<string, HUDGroup[]> }
  */
 export function getEd4eGroups() {
   const ed4eConfig = CONFIG.ED4E;
+  const itemSystemTypes = ED4E_CONSTANTS.SYSTEM_TYPES.Item;
   return {
     actionSpeed: ed4eConfigToGroups( ed4eConfig.ACTIONS.action ),
+    inventory:   ed4eSystemTypesToGroups(
+      "Item",
+      [
+        itemSystemTypes.armor,
+        itemSystemTypes.equipment,
+        itemSystemTypes.shield,
+        itemSystemTypes.weapon,
+      ],
+    )
   };
 }
 
@@ -90,13 +119,13 @@ export function getCategoryHierarchy() {
   const systemGroups = getSystemGroups();
   const ed4eGroups = getEd4eGroups();
   return {
-    general:   [ systemGroups.attributes , systemGroups.other, ],
+    general:   [ systemGroups.attributes, systemGroups.other, ],
     powers:    [],
     talents:   [ ...ed4eGroups.actionSpeed ],
     skills:    [ ...ed4eGroups.actionSpeed ],
     devotions: [],
     spells:    [],
-    inventory: [],
+    inventory: [ ...ed4eGroups.inventory ],
     combat:    [],
     effects:   [],
     utility:   [],
