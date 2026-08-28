@@ -60,6 +60,7 @@ export class ActionAbilityBuilder extends BaseActionBuilder {
       const action = {
         id,
         name:         ability.name,
+        tooltip:      ability.system.summary.value || ability.system.description.value,
         encodedValue: [ ability.type, id ].join( this.delimiter ),
         img:          ability.img,
         ...this._getAbilityInfoData( ability ),
