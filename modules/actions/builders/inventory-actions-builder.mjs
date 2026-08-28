@@ -1,7 +1,7 @@
 import { BaseActionBuilder } from "./base-builder.mjs";
 import { ITEM_STATUS_ICONS } from "../../config/ed4e.mjs";
 
-export class InventoryBuilder extends BaseActionBuilder {
+export class InventoryActionsBuilder extends BaseActionBuilder {
 
   /** @inheritdoc */
   appliesToActor( actor ) {

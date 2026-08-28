@@ -122,10 +122,10 @@ export function getCategoryHierarchy() {
   const ed4eGroups = getEd4eGroups();
   return {
     general:   [ systemGroups.attributes, systemGroups.other, ],
-    powers:    [],
+    powers:    [ ...ed4eGroups.actionSpeed, ],
     talents:   [ ...ed4eGroups.actionSpeed, ],
     skills:    [ ...ed4eGroups.actionSpeed, ],
-    devotions: [],
+    devotions: [ ...ed4eGroups.actionSpeed, ],
     spells:    [],
     inventory: [ ...ed4eGroups.inventory, ],
     combat:    [ systemGroups.attacks, systemGroups.combatActions, ],
