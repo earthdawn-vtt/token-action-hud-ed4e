@@ -29,7 +29,7 @@
  * @property {ActionInfoData} [info1] The first info displayed on the button.
  * @property {ActionInfoData} [info2] The second info displayed on the button.
  * @property {ActionInfoData} [info3] The third info displayed on the button.
- * @property {boolean} [seleced] Whether the action is selected in the HUD.
+ * @property {boolean} [selected] Whether the action is selected in the HUD.
  * @property {object} [system] Used to store additional properties.
  * @property {ActionTooltipData} [tooltip] The tooltip displayed when hovering the button.
  * @property {function} [onClick] Function to execute when the action is clicked.
