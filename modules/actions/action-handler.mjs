@@ -69,6 +69,7 @@ import { ActionAbilityBuilder } from "./builders/action-ability-builder.mjs";
 import { GeneralActionsBuilder } from "./builders/general-actions-builder.mjs";
 import { InventoryActionsBuilder } from "./builders/inventory-actions-builder.mjs";
 import { CombatActionsBuilder } from "./builders/combat-actions-builder.mjs";
+import { EffectActionsBuilder } from "./builders/effect-actions-builder.mjs";
 
 export function createActionHandler( coreApi ) {
 
@@ -85,6 +86,7 @@ export function createActionHandler( coreApi ) {
         new ActionAbilityBuilder( this, coreApi, "devotion" ),
         new InventoryActionsBuilder( this, coreApi ),
         new CombatActionsBuilder( this, coreApi ),
+        new EffectActionsBuilder( this, coreApi ),
       ];
 
       this.multiActorBuilder = [];

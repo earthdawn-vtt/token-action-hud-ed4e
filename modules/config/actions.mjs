@@ -2,6 +2,7 @@
  * @enum {string}
  */
 export const ACTION_IDS = {
+  addEffect:     "addEffect",
   jumpUp:        "jumpUp",
   knockdownTest: "knockdownTest",
   meleeAttack:   "meleeAttack",

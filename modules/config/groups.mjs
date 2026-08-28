@@ -23,12 +23,14 @@ export const CATEGORY_IDS = {
  * @enum {string}
  */
 export const MODULE_GROUP_IDS = {
-  attributes:    "attributes",
-  other:         "other",
-  favorites:     "favorites",
-  utility:       "utility",
   attacks:       "attacks",
+  attributes:    "attributes",
   combatActions: "combatActions",
+  effects:       "effects",
+  favorites:     "favorites",
+  other:         "other",
+  statusEffects: "statusEffects",
+  utility:       "utility",
 };
 
 /**
@@ -129,7 +131,7 @@ export function getCategoryHierarchy() {
     spells:    [],
     inventory: [ ...ed4eGroups.inventory, ],
     combat:    [ systemGroups.attacks, systemGroups.combatActions, ],
-    effects:   [],
+    effects:   [ systemGroups.effects, systemGroups.statusEffects, ],
     utility:   [],
   };
 }
