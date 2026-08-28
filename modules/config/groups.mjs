@@ -8,15 +8,16 @@ import { MAX_SPELL_CIRCLE } from "./ed4e.mjs";
  * Module-specific categories that exist on the HUD as top level.
  */
 export const CATEGORY_IDS = {
-  general:   "general",
-  power:     "powers",
-  talent:    "talents",
-  skill:     "skills",
-  devotion:  "devotions",
-  spell:     "spells",
-  inventory: "inventory",
   combat:    "combat",
+  devotion:  "devotions",
   effect:    "effects",
+  general:   "general",
+  inventory: "inventory",
+  power:     "powers",
+  skill:     "skills",
+  spell:     "spells",
+  matrix:    "matrix",
+  talent:    "talents",
   utility:   "utility",
 };
 
@@ -30,6 +31,7 @@ export const MODULE_GROUP_IDS = {
   combatActions: "combatActions",
   effects:       "effects",
   favorites:     "favorites",
+  matrixActions: "matrixActions",
   other:         "other",
   statusEffects: "statusEffects",
   utility:       "utility",
@@ -84,6 +86,8 @@ function ed4eSystemTypesToGroups( documentName, systemTypes ) {
     };
   } );
 }
+
+export const MATRIX_GROUP_ID = "matrix";
 
 export const SPELL_CIRCLE_GROUP_ID = "spellCircle";
 
@@ -165,6 +169,7 @@ export function getCategoryHierarchy() {
     skills:    [ ...ed4eGroups.actionSpeed, ],
     devotions: [ ...ed4eGroups.actionSpeed, ],
     spells:    [ ...ed4eGroups.spells, ],
+    matrix:    [ systemGroups.matrixActions, ],
     inventory: [ ...ed4eGroups.inventory, ],
     combat:    [ systemGroups.attacks, systemGroups.combatActions, ],
     effects:   [ systemGroups.effects, systemGroups.statusEffects, ],

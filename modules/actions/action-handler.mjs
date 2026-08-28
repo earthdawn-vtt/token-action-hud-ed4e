@@ -72,6 +72,7 @@ import { CombatActionsBuilder } from "./builders/combat-actions-builder.mjs";
 import { EffectActionsBuilder } from "./builders/effect-actions-builder.mjs";
 import { MultiTokenActionsBuilder } from "./builders/multi-token-actions-builder.mjs";
 import { SpellActionsBuilder } from "./builders/spell-actions-builder.mjs";
+import { MatrixActionsBuilder } from "./builders/matrix-actions.builder.mjs";
 
 export function createActionHandler( coreApi ) {
 
@@ -87,6 +88,7 @@ export function createActionHandler( coreApi ) {
         new ActionAbilityBuilder( this, coreApi, "skill" ),
         new ActionAbilityBuilder( this, coreApi, "devotion" ),
         new SpellActionsBuilder( this, coreApi ),
+        new MatrixActionsBuilder( this, coreApi ),
         new InventoryActionsBuilder( this, coreApi ),
         new CombatActionsBuilder( this, coreApi ),
         new EffectActionsBuilder( this, coreApi ),
