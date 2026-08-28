@@ -13,7 +13,7 @@
   "version": "This is auto replaced",
   "compatibility": {
     "minimum": "14",
-    "verified": "14.362"
+    "verified": "14.366"
   },
   "esmodules": [
     "modules/init.mjs"
@@ -42,8 +42,8 @@
         "type": "system",
         "compatibility": [
           {
-            "minimum": "0.2",
-            "verified": "0.2"
+            "minimum": "1.0",
+            "verified": "1.0"
           }
         ]
       }
