@@ -1,3 +1,4 @@
+/** @type {Record<string, Record<string, string>>} */
 export const ITEM_STATUS_ICONS = {
   armor: {
     carried:  "fa-regular fa-backpack",
@@ -24,3 +25,6 @@ export const ITEM_STATUS_ICONS = {
     tail:     "fa-solid fa-worm",
   },
 };
+
+/** @type {number} */
+export const MAX_SPELL_CIRCLE = 15;

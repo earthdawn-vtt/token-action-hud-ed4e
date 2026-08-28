@@ -2,6 +2,8 @@
  * @import { HUDGroup } from "../layout/defaults.mjs";
  */
 
+import { MAX_SPELL_CIRCLE } from "./ed4e.mjs";
+
 /**
  * Module-specific categories that exist on the HUD as top level.
  */
@@ -83,6 +85,24 @@ function ed4eSystemTypesToGroups( documentName, systemTypes ) {
   } );
 }
 
+export const SPELL_CIRCLE_GROUP_ID = "spellCircle";
+
+/**
+ * Get a group for each spell circle.
+ * @returns { HUDGroup[] }
+ */
+function getSpellCircleGroups() {
+  const spellGroups = [];
+  for ( let circle = 1; circle <= MAX_SPELL_CIRCLE; circle++ ) {
+    spellGroups.push( {
+      id:   `${ SPELL_CIRCLE_GROUP_ID }${ circle }`,
+      name: _loc( "TokenActionHud.Groups.Names.spellCircle", { circle } ),
+      type: "system",
+    } );
+  }
+  return spellGroups;
+}
+
 /**
  * Group data for groups based on ED4E config data.
  * @returns { Record<string, HUDGroup[]> }
@@ -100,10 +120,15 @@ export function getEd4eGroups() {
         itemSystemTypes.shield,
         itemSystemTypes.weapon,
       ],
-    )
+    ),
+    spells:      getSpellCircleGroups(),
   };
 }
 
+/**
+ * Group data for groups that are pre-defined by TAH Core.
+ * @returns { Record<string, HUDGroup> }
+ */
 export function getTAHCoreGroups() {
   return {
     token: { id: "token", type: "system", },
@@ -125,6 +150,10 @@ export function getCategoryBaseGroups() {
   return Object.fromEntries( categoryGroups.map( group => [ group.id, group ] ) );
 }
 
+/**
+ * Get the category hierarchy for the HUD. Each key is a category ID, and each value is an array of groups underneath it.
+ * @returns {Record<string, HUDGroup[]>}
+ */
 export function getCategoryHierarchy() {
   const systemGroups = getSystemGroups();
   const ed4eGroups = getEd4eGroups();
@@ -135,7 +164,7 @@ export function getCategoryHierarchy() {
     talents:   [ ...ed4eGroups.actionSpeed, ],
     skills:    [ ...ed4eGroups.actionSpeed, ],
     devotions: [ ...ed4eGroups.actionSpeed, ],
-    spells:    [],
+    spells:    [ ...ed4eGroups.spells, ],
     inventory: [ ...ed4eGroups.inventory, ],
     combat:    [ systemGroups.attacks, systemGroups.combatActions, ],
     effects:   [ systemGroups.effects, systemGroups.statusEffects, ],
@@ -143,6 +172,10 @@ export function getCategoryHierarchy() {
   };
 }
 
+/**
+ * Get all groups available, including those from ED4E and TAH Core.
+ * @returns {Record<string, HUDGroup>}
+ */
 export function getSystemGroups() {
   const moduleGroups = getModuleGroups();
   const ed4eGroups = getEd4eGroups();
