@@ -20,7 +20,7 @@
  * @typedef ActionData
  * @property {string} id The action id. Most commonly the item id.
  * @property {string} name The action name displayed on the button.
- * @property {string} encodedValue The value passed to the {@link RollHandler} when an action is clicked.
+ * @property {string} [encodedValue] The value passed to the {@link RollHandler} when an action is clicked.
  * @property {string} [cssClass] The CSS class applied to the button.
  * @property {string} [icon] The icon displayed on the button in HTML format,
  * e.g., `<i class="fas fa-plus" title="Bonus"></i>`.
@@ -68,6 +68,7 @@
 import { ActionAbilityBuilder } from "./builders/action-ability-builder.mjs";
 import { GeneralActionsBuilder } from "./builders/general-actions-builder.mjs";
 import { InventoryBuilder } from "./builders/inventory-builder.mjs";
+import { CombatActionsBuilder } from "./builders/combat-actions-builder.mjs";
 
 export function createActionHandler( coreApi ) {
 
@@ -83,6 +84,7 @@ export function createActionHandler( coreApi ) {
         new ActionAbilityBuilder( this, coreApi, "skill" ),
         new ActionAbilityBuilder( this, coreApi, "devotion" ),
         new InventoryBuilder( this, coreApi ),
+        new CombatActionsBuilder( this, coreApi ),
       ];
 
       this.multiActorBuilder = [];

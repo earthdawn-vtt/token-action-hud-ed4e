@@ -23,10 +23,12 @@ export const CATEGORY_IDS = {
  * @enum {string}
  */
 export const MODULE_GROUP_IDS = {
-  attributes: "attributes",
-  other:      "other",
-  favorites:  "favorites",
-  utility:    "utility",
+  attributes:    "attributes",
+  other:         "other",
+  favorites:     "favorites",
+  utility:       "utility",
+  attacks:       "attacks",
+  combatActions: "combatActions",
 };
 
 /**
@@ -121,12 +123,12 @@ export function getCategoryHierarchy() {
   return {
     general:   [ systemGroups.attributes, systemGroups.other, ],
     powers:    [],
-    talents:   [ ...ed4eGroups.actionSpeed ],
-    skills:    [ ...ed4eGroups.actionSpeed ],
+    talents:   [ ...ed4eGroups.actionSpeed, ],
+    skills:    [ ...ed4eGroups.actionSpeed, ],
     devotions: [],
     spells:    [],
-    inventory: [ ...ed4eGroups.inventory ],
-    combat:    [],
+    inventory: [ ...ed4eGroups.inventory, ],
+    combat:    [ systemGroups.attacks, systemGroups.combatActions, ],
     effects:   [],
     utility:   [],
   };
