@@ -36,6 +36,35 @@
  * @property {function} [onHover] Function to execute when the action is hovered.
  */
 
+// region Foundry Core API
+
+/**
+ * @typedef ContextMenuEntry
+ * @property {string} label                             The context menu label. Can be localized.
+ * @property {string} [icon]                            A string containing a className. A full HTML element may also be
+ *                                                      provided.
+ * @property {string} [classes]                         Additional CSS classes to apply to this menu item.
+ * @property {string} [group]                           An identifier for a group this entry belongs to.
+ * @property {ContextMenuCallback} [onClick]            The function to call when the menu item is clicked.
+ * @property {ContextMenuCondition|boolean} [visible]    A function to call or boolean value to determine if this entry
+ *                                                      appears in the menu.
+ */
+
+/**
+ * @callback ContextMenuCondition
+ * @param {HTMLElement} target                          The element that the context menu has been triggered for.
+ * @returns {boolean}                                   Whether the entry should be rendered in the context menu.
+ */
+
+/**
+ * @callback ContextMenuCallback
+ * @param {PointerEvent} event                          The triggering event.
+ * @param {HTMLElement} target                          The element that the context menu has been triggered for.
+ * @returns {unknown}
+ */
+
+// endregion
+
 import { ActionAbilityBuilder } from "./builders/action-ability-builder.mjs";
 import { GeneralActionsBuilder } from "./builders/general-actions-builder.mjs";
 
