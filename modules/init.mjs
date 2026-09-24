@@ -1,11 +1,11 @@
-import { SystemManager } from "./system-manager.mjs";
-import { MODULE, REQUIRED_CORE_MODULE_VERSION } from "./constants.mjs";
+import { MODULE, REQUIRED_CORE_MODULE_VERSION } from "./config/system.mjs";
+import { createSystemManager } from "./system/system-manager.mjs";
 
-Hooks.on('tokenActionHudCoreApiReady', async () => {
-    const module = game.modules.get(MODULE.ID);
-    module.api = {
-        requiredCoreModuleVersion: REQUIRED_CORE_MODULE_VERSION,
-        SystemManager
-    }
-    Hooks.call('tokenActionHudSystemReady', module);
-})
+Hooks.once( "tokenActionHudCoreApiReady", async ( coreModule ) => {
+  const module = game.modules.get( MODULE.ID );
+  module.api = {
+    requiredCoreModuleVersion: REQUIRED_CORE_MODULE_VERSION,
+    SystemManager:             createSystemManager( coreModule.api ),
+  };
+  Hooks.call( "tokenActionHudSystemReady", module );
+} );

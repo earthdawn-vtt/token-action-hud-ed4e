@@ -1,61 +1,78 @@
 {
-  "tokenActionHud": {
-    "ed4e": {
-      "abbreviations": {
-        "physicalArmor": "PR",
-        "physicalDefense": "PV",
-        "mysticArmor": "MR",
-        "mysticDefense": "MV"
-      },
-      "attack": "Angriff",
-      "casting": "Wirken",
-      "disciplines": {
-
-      },
-      "forged": "Geschmiedet",
-      "groupTitles": {
-        "addEffect": "Neuer Effekt",
-        "attributes": "Attribute",
-        "favorites": "Favoriten",
-        "general": "Allgemein",
-        "matrix": "Matrix"
-      },
-      "infoTitles": {
-        "attributeStep": "Attributsstufe",
-        "recoveryTests": "Erholungsprobe (verfügbar/max)"
-      },
-      "item": "Gegenstand",
-      "na": "N/A",
-      "newEffect": "Neuen Effekt hinzufügen",
-      "options": "Optionen",
-      "rollInitiative": "Würfle Initiative",
-      "settings": {
-        "abbreviateAttributes": {
-          "hint": "Attributsnamen abgekürzt mit drei Buchstaben anzeigen",
-          "name": "Attributsnamen abkürzen"
+  "TokenActionHud": {
+    "Actions":    {
+      "Infos":       {
+        "Text":   {
+          "attributeStep":   "Stufe {step}",
+          "equipmentAmount": "{amount}x",
+          "mysticArmor":     "{armor} + {forgeBonus} Mystisch",
+          "physicalArmor":   "{armor} + {forgeBonus} Physisch",
+          "shieldMystical":  "{mystical} MV",
+          "shieldPhysical":  "{physical} PV",
+          "spellThreads":    "{woven} / {required} Fäden",
+          "weaponRange":     "{shortMin} - {shortMax} / {longMin} - {longMax}"
         },
-        "showWeaponAmmoInfo": {
-          "hint": "Anzahl an Munition für Fernkampfwaffen anzeigen (falls getracked)",
-          "name": "Munition für Fernkampfwaffen anzeigen"
+        "Title":  {
+          "spellThreads":     "Anzahl der schon gewebten und insgesamt benötigten Fäden.",
+          "spellcastingType": "Art des Zaubers"
+        },
+        "Titles": {
+          "equipmentAmount":        "Die Menge die du von diesem Gegenstand besitzt.",
+          "recoveryTestResource":   "Verfügbare Erholungsproben von täglichem Maximum",
+          "shieldMystical":         "MystischeVerteidigung",
+          "shieldPhysical":         "Physische Verteidigung",
+          "shieldShatterThreshold": "Bruchschwelle",
+          "weaponAmmunitionType":   "Art der Munition die diese Waffe verwendet.",
+          "weaponRange":            "Die minimale und maximale Distanz für kurz und lange Reichweite der Waffe.",
+          "weaponTotalDamage":      "Schadensstufe"
         }
       },
-      "shatter": "Bruchschwelle",
-      "system": "System",
-      "threads": "Fäden",
-      "tooltips": {
-        "attributeTest": "Würfle einen {attribute}-Test.",
-        "info": {
-          "matrixSpell": "Abgestimmter Zauber",
-          "matrixThreads": "Fäden Aktiv/Benötigt",
-          "weaponAmmo": "Verfügbare Munition",
-          "weaponRange": "Reichweite (kurz/lang)",
-          "weaponStepTotal": "Schadensstufe gesamt<br>(Waffe + Geschmiedet + Attribut)"
-        },
-        "recoveryTest": "Würfle einen Erholungstest."
-      },
-      "unequipped": "Nicht ausgerüstet",
-      "utility": "Nützliches",
-      "weaving": "Weben"
+      "Names":       {
+        "addEffect":       "Active Effect erstellen",
+        "endTurn":         "Zug Beenden",
+        "jumpUp":          "Aufpsringen",
+        "knockdownTest":   "Niederschlagsprobe",
+        "matrixAttune":    "Matrix Abstimmen",
+        "matrixAttuneAll": "Alle Matrizen abstimmen",
+        "matrixCast":      "Aus Matrix Wirken",
+        "matrixEmpty":     "Matrix Leeren",
+        "matrixEmptyAll":  "Alle Matrizen Leeren",
+        "meleeAttack":     "Nahkampfangriff",
+        "rangedAttack":    "Fernkampfangriff",
+        "recovery":        "Erholung",
+        "takeDamage":      "Schaden Nehmen",
+        "unarmedAttack":   "Unbewaffneter Angriff",
+        "useKarma":        "Nutze Immer Karma"
+      }
+    },
+    "Categories": {
+      "Names": {
+        "combat":    "Kampf",
+        "devotions": "Weihekräfte",
+        "effects":   "Effekte",
+        "general":   "Allgemein",
+        "inventory": "Inventar",
+        "matrix":    "Matrix",
+        "powers":    "Kräfte",
+        "skills":    "Fertigkeiten",
+        "spells":    "Zauber",
+        "talents":   "Talente",
+        "utility":   "Mehr"
+      }
+    },
+    "Groups":     {
+      "Names": {
+        "attacks":       "Angriffe",
+        "attributes":    "Attribute",
+        "combatActions": "Kampfaktionen",
+        "effects":       "Effekt-Funktionen",
+        "favorites":     "Favoriten",
+        "matrixActions": "Matrix-Aktionen",
+        "other":         "Weiteres",
+        "spellCircle":   "Kreis {circle}",
+        "statusEffects": "Statuseffekte",
+        "utilities":     "Nützliches"
+      }
     }
   }
 }

@@ -1,61 +1,78 @@
 {
-  "tokenActionHud": {
-    "ed4e": {
-      "abbreviations": {
-        "physicalArmor": "PA",
-        "physicalDefense": "PD",
-        "mysticArmor": "MA",
-        "mysticDefense": "MD"
-      },
-      "attack": "Attack",
-      "casting": "Casting",
-      "disciplines": {
-
-      },
-      "forged": "Forged",
-      "groupTitles": {
-        "addEffect": "Add Effect",
-        "attributes": "Attributes",
-        "favorites": "Favorites",
-        "general": "General",
-        "matrix": "Matrix"
-      },
-      "infoTitles": {
-        "attributeStep": "Attribute Step",
-        "recoveryTests": "Recovery Test (current/max)"
-      },
-      "item": "Item",
-      "na": "N/A",
-      "newEffect": "Add New Effect",
-      "options": "Options",
-      "rollInitiative": "Roll Initiative",
-      "settings": {
-        "abbreviateAttributes": {
-          "hint": "Display attribute names as a three-character abbreviation",
-          "name": "Abbreviate Attribute Names"
+  "TokenActionHud": {
+    "Actions":    {
+      "Infos":       {
+        "Text":   {
+          "attributeStep":   "Step {step}",
+          "equipmentAmount": "{amount}x",
+          "mysticArmor":     "{armor} + {forgeBonus} Mystic",
+          "physicalArmor":   "{armor} + {forgeBonus} Physical",
+          "shieldMystical":  "{mystical} MD",
+          "shieldPhysical":  "{physical} PD",
+          "spellThreads":    "{woven} / {required} Threads",
+          "weaponRange":     "{shortMin} - {shortMax} / {longMin} - {longMax}"
         },
-        "showWeaponAmmoInfo": {
-          "hint": "Display value of tracked ammo for ranged weapons",
-          "name": "Show ammo for weapons"
+        "Title":  {
+          "spellThreads":     "Number of already woven and total required threads.",
+          "spellcastingType": "Spellcasting Type"
+        },
+        "Titles": {
+          "equipmentAmount":        "The amount you have of this item.",
+          "recoveryTestResource":   "Available Recovery Tests of daily maximum",
+          "shieldMystical":         "Mystical Defense",
+          "shieldPhysical":         "Physical Defense",
+          "shieldShatterThreshold": "Shatter Threshold",
+          "weaponAmmunitionType":   "Type of ammunition used with this weapon.",
+          "weaponRange":            "The minimum and maximum distance for the weapon's short and long range.",
+          "weaponTotalDamage":      "Damage Step"
         }
       },
-      "shatter": "Shatter",
-      "system": "System",
-      "threads": "Threads",
-      "tooltips": {
-        "attributeTest": "Roll a {attribute} test.",
-        "info": {
-          "matrixSpell": "Spell in Matrix",
-          "matrixThreads": "Threads Active/Required",
-          "weaponAmmo": "Current Ammo",
-          "weaponRange": "Range (short/long)",
-          "weaponStepTotal": "Damage step total<br>(Weapon + Forged + Attribute)"
-        },
-        "recoveryTest": "Roll a recovery test."
-      },
-      "unequipped": "Unequipped",
-      "utility": "Utility",
-      "weaving": "Weaving"
+      "Names":       {
+        "addEffect":       "Add Active Effect",
+        "endTurn":         "End Turn",
+        "jumpUp":          "Jump Up",
+        "knockdownTest":   "Knockdown Test",
+        "matrixAttune":    "Attune Matrix",
+        "matrixAttuneAll": "Attune All Matrices",
+        "matrixCast":      "Cast From Matrix",
+        "matrixEmpty":     "Empty Matrix",
+        "matrixEmptyAll":  "Empty All Matrices",
+        "meleeAttack":     "Melee Attack",
+        "rangedAttack":    "Ranged Attack",
+        "recovery":        "Recovery",
+        "takeDamage":      "Take Damage",
+        "unarmedAttack":   "Unarmed Attack",
+        "useKarma":        "Always Use Karma"
+      }
+    },
+    "Categories": {
+      "Names": {
+        "combat":    "Combat",
+        "devotions": "Devotions",
+        "effects":   "Effects",
+        "general":   "General",
+        "inventory": "Inventory",
+        "matrix":    "Matrices",
+        "powers":    "Powers",
+        "skills":    "Skills",
+        "spells":    "Spells",
+        "talents":   "Talents",
+        "utility":   "Utility"
+      }
+    },
+    "Groups":     {
+      "Names": {
+        "attacks":       "Attacks",
+        "attributes":    "Attributes",
+        "combatActions": "Combat Actions",
+        "effects":       "Effect Functions",
+        "favorites":     "Favorites",
+        "matrixActions": "Matrix Actions",
+        "other":         "Other",
+        "spellCircle":   "Circle {circle}",
+        "statusEffects": "Status Effects",
+        "utilities":     "Utilities"
+      }
     }
   }
 }
